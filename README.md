@@ -2,7 +2,7 @@
 
 This component library is not a perfect editor, and compared to other open-source projects, its features are quite limited. The main goal of this small project is to provide a simple starting point for a basic editor or to serve as a simple starting point for your Svelte development or testing with Tiptap.
 
-**sv5tiptap** is primarily based on Svelte 5, Tiptap 2, Tailwind 4, and DaisyUI 5, and was developed using the latest versions of these frameworks, as detailed in the `package.json`. It does not rely on many custom extensions; only two existing open-source extensions were used to implement image and font size functionality. If you need more features, you are welcome to develop extensions yourself. Tiptap provides detailed documentation for this, though it can be a time-consuming challenge.
+**sv5tiptap** is primarily based on Svelte 5, Tiptap 2, Tailwind 4, DaisyUI 5, Lucide icons and was developed using the latest versions of these frameworks, as detailed in the `package.json`. It does not rely on many custom extensions; only two existing open-source extensions were used to implement image and font size functionality. If you need more features, you are welcome to develop extensions yourself. Tiptap provides detailed documentation for this, though it can be a time-consuming challenge.
 
 Currently, there is no user manual, and the code lacks comments, as I haven’t had enough time to complete this yet. However, I plan to continue optimizing it and add clear documentation after using it for a short period in my project. Although there are no official documents yet, most of the code follows the basic usage of Svelte, Tiptap, and Tailwind.
 
@@ -17,6 +17,7 @@ Welcome any suggestions or contributions.
 - **Tiptap V2**
 - **Tailwind CSS V4**
 - **DaisyUI V5**
+- **Lucide icons**
 - **tiptap-extension-resize-image**: [GitHub](https://github.com/bae-sh/tiptap-extension-resize-image)
 - **tiptap-extension-font-size**: [GitHub](https://github.com/TheNaschkatze/tiptap-extension-font-size)
 
@@ -79,4 +80,13 @@ also you need to install the following packages:
 		{@html html}
 	</div>
 </div>
+```
+
+```css
+// src/app.css
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@plugin "daisyui";
+@source "../node_modules/@lux-ok/sv5tiptap";
 ```
