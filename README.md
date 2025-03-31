@@ -28,12 +28,14 @@ npm install @lux-ok/sv5tiptap
 
 also you need to install the following packages:
 
+```json
 "peerDependencies": {
-"svelte": "^5.0.0",
-"tailwindcss": "^4.0.0",
-"@tailwindcss/typography": "^0.5.15",
-"daisyui": "^5.0.9"
+  "svelte": "^5.0.0",
+  "tailwindcss": "^4.0.0",
+  "@tailwindcss/typography": "^0.5.15",
+  "daisyui": "^5.0.9"
 }
+```
 
 ## Usage
 
