@@ -1,58 +1,77 @@
-# Svelte library
+# sv5tiptap - A simple rich editor for svelte 5
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
+This component library is not a perfect editor, and compared to other open-source projects, its features are quite limited. The main goal of this small project is to provide a simple starting point for a basic editor or to serve as a simple starting point for your Svelte development or testing with Tiptap.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+**sv5tiptap** is primarily based on Svelte 5, Tiptap 2, Tailwind 4, and DaisyUI 5, and was developed using the latest versions of these frameworks, as detailed in the `package.json`. It does not rely on many custom extensions; only two existing open-source extensions were used to implement image and font size functionality. If you need more features, you are welcome to develop extensions yourself. Tiptap provides detailed documentation for this, though it can be a time-consuming challenge.
 
-## Creating a project
+Currently, there is no user manual, and the code lacks comments, as I haven’t had enough time to complete this yet. However, I plan to continue optimizing it and add clear documentation after using it for a short period in my project. Although there are no official documents yet, most of the code follows the basic usage of Svelte, Tiptap, and Tailwind.
 
-If you're seeing this, you've probably already done this step. Congrats!
+At this moment, **sv5tiptap** may not be perfect, but for me and many users, it indeed fills the need for a simple CMS editor within Svelte projects. I hope it proves useful to you or at least inspires you.
+
+## This library is licensed under the MIT License.
+
+Welcome any suggestions or contributions.
+
+## This library uses the following packages. Thanks a lot!
+
+- **Tiptap V2**
+- **Tailwind CSS V4**
+- **DaisyUI V5**
+- **tiptap-extension-resize-image**: [GitHub](https://github.com/bae-sh/tiptap-extension-resize-image)
+- **tiptap-extension-font-size**: [GitHub](https://github.com/TheNaschkatze/tiptap-extension-font-size)
+
+## Installation
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+npm install @lux-ok/sv5tiptap
 ```
 
-## Developing
+also you need to install the following packages:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+"peerDependencies": {
+"svelte": "^5.0.0",
+"tailwindcss": "^4.0.0",
+"@tailwindcss/typography": "^0.5.15",
+"daisyui": "^5.0.9"
+}
 
-```bash
-npm run dev
+## Usage
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+```svelte
+<script lang="ts">
+	import { htmlContent, jsonContent, jsonToHtml, TiptapEditor } from '$lib/index.js';
+	import type { EditorType } from '$lib/index.js';
+	import { onMount } from 'svelte';
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+	/**
+	 * You can put html or json content to display the default content when the editor is instantiated.
+	 * If content is set to undefined, sv5tiptap will load the demo content.
+	 * or you only need blank content: content = ‘’
+	 */
+	let content = undefined;
+	let editor = $state<EditorType>();
+	let html = $state();
 
-## Building
+	$effect(() => {
+		// This is not necessary
+		// you can use getJSON() or getHTML() to obtain the data of the editor element when needed.
+		editor?.on('update', () => {
+			html = jsonToHtml(editor?.getJSON());
+		});
+	});
 
-To build your library:
+	onMount(() => {
+		// This is not necessary
+		html = jsonToHtml(jsonContent);
+	});
+</script>
 
-```bash
-npm run package
-```
+<div class="flex h-svh flex-row gap-4 overflow-hidden p-4">
+	<TiptapEditor bind:editor {content} defaultToolbar={true} class="flex-1 rounded-md" />
 
-To create a production version of your showcase app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
+	<div class="prose max-w-full flex-1 overflow-auto rounded-md border p-4">
+		<!-- This is not necessary -->
+		{@html html}
+	</div>
+</div>
 ```
