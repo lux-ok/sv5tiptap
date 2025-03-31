@@ -1,6 +1,6 @@
 # sv5tiptap - A simple rich editor for svelte 5
 
-This component library is not a perfect editor, and compared to other open-source projects, its features are quite limited. The main goal of this small project is to provide a simple starting point for a basic editor or to serve as a simple starting point for your Svelte development or testing with Tiptap.
+This component library is not a perfect editor, and compared to other open-source projects, its features are quite limited. The main goal of this small project is to provide a basic rich editor for your Svelte development or testing with Tiptap.
 
 **sv5tiptap** is primarily based on Svelte 5, Tiptap 2, Tailwind 4, DaisyUI 5, Lucide icons and was developed using the latest versions of these frameworks, as detailed in the `package.json`. It does not rely on many custom extensions; only two existing open-source extensions were used to implement image and font size functionality. If you need more features, you are welcome to develop extensions yourself. Tiptap provides detailed documentation for this, though it can be a time-consuming challenge.
 
