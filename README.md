@@ -23,7 +23,7 @@ Welcome any suggestions or contributions.
 ## Installation
 
 ```bash
-npm install @lux-ok/sv5tiptap
+npm npm i -D @lux-ok/sv5tiptap
 ```
 
 also you need to install the following packages:
