@@ -53,6 +53,8 @@ also you need to install the following packages:
 	 */
 	let content = undefined;
 	let editor = $state<EditorType>();
+
+	// This is not necessary
 	let html = $state();
 
 	$effect(() => {
