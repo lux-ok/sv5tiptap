@@ -42,8 +42,8 @@ also you need to install the following packages:
 ```svelte
 <script lang="ts">
 	// src/routes/+page.svelte
-	import { htmlContent, jsonContent, jsonToHtml, TiptapEditor } from '$lib/index.js';
-	import type { EditorType } from '$lib/index.js';
+	import { htmlContent, jsonContent, jsonToHtml, TiptapEditor } from '@lux-ok/sv5tiptap';
+	import type { EditorType } from '@lux-ok/sv5tiptap';
 	import { onMount } from 'svelte';
 
 	/**
