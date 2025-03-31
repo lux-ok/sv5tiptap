@@ -21,24 +21,22 @@
 	outline: 4px solid var(--color-accent);
 } */
 
-/* 讓表格的 th、td 在「靠近右邊緣」時顯示 col-resize */
 .ProseMirror .tableWrapper th,
 .ProseMirror .tableWrapper td {
-	position: relative; /* 確保偽元素相對於 th/td 定位 */
+	position: relative;
 }
 
 .ProseMirror .tableWrapper th::after,
 .ProseMirror .tableWrapper td::after {
 	content: '';
 	position: absolute;
-	top: 0; /* 頂部對齊 */
-	right: -5px; /* 調整觸發區域寬度（負值向左擴展） */
-	bottom: 0; /* 底部對齊 */
-	width: 10px; /* 調整觸發區域寬度 */
+	top: 0;
+	right: -5px;
+	bottom: 0;
+	width: 10px;
 	cursor: col-resize;
 }
 
-/* 但在表格內的 p、span、text 仍然維持輸入游標 */
 .ProseMirror .tableWrapper th p,
 .ProseMirror .tableWrapper td p,
 .ProseMirror .tableWrapper th span,
@@ -67,10 +65,6 @@
 	border-style: double;
 	border-color: var(--color-accent);
 }
-
-/* .tiptap :first-child {
-	margin-top: 0;
-} */
 
 .ProseMirror img {
 	margin: 1rem 0;

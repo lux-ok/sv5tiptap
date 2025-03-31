@@ -89,4 +89,60 @@ also you need to install the following packages:
 @plugin '@tailwindcss/typography';
 @plugin "daisyui";
 @source "../node_modules/@lux-ok/sv5tiptap";
+
+.prose {
+	@apply text-base text-gray-700 dark:text-gray-300;
+
+	h1,
+	h2,
+	h3 {
+		@apply my-3;
+	}
+	h1 {
+		@apply text-primary text-3xl font-bold;
+	}
+	h2 {
+		@apply text-secondary text-2xl font-semibold;
+	}
+	p {
+		@apply leading-relaxed;
+	}
+	ul {
+		@apply marker:text-primary ml-5 list-outside list-disc;
+	}
+	ol {
+		@apply marker:text-secondary ml-5 list-outside list-decimal;
+	}
+	blockquote {
+		@apply border-primary border-l-4 pl-4 text-gray-600 italic dark:text-gray-400;
+	}
+	li p {
+		@apply my-2;
+	}
+	hr {
+		@apply my-3;
+	}
+	table {
+		@apply table w-full rounded-lg border border-gray-300 dark:border-gray-600;
+	}
+	col {
+		@apply w-auto;
+	}
+	th {
+		@apply bg-base-200 dark:bg-base-300 border border-gray-300 p-2 text-base font-semibold dark:border-gray-600;
+	}
+	td {
+		@apply border border-gray-300 p-2 dark:border-gray-600;
+	}
+	th p,
+	td p {
+		@apply my-0 min-h-6;
+	}
+	pre code {
+		@apply overflow-hidden text-wrap;
+	}
+	img {
+		@apply mx-0 my-4;
+	}
+}
 ```

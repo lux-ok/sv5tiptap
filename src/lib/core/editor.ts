@@ -15,10 +15,8 @@ import ListKeymap from '@tiptap/extension-list-keymap';
 import TextStyle from '@tiptap/extension-text-style';
 import Color from '@tiptap/extension-color';
 import Link from '@tiptap/extension-link';
-// import Focus from '@tiptap/extension-focus';
-// import Image from '@tiptap/extension-image';
 import ImageResize from 'tiptap-extension-resize-image';
-import { FontSize } from '../core/custom-extension/font-size.js';
+import { FontSize } from './custom-extension/font-size.js';
 
 import { jsonContent } from './content-demo.js';
 
@@ -40,15 +38,14 @@ export const defaultExtensions: Extensions = [
 	TableCell,
 	TextStyle.configure({ mergeNestedSpanStyles: true }),
 	Color,
-	ImageResize,
-	// Image.configure({ allowBase64: true }),
 	Link.configure({
 		openOnClick: false,
 		autolink: false,
 		defaultProtocol: 'https',
 		protocols: ['http', 'https']
 	}),
-	FontSize
+	FontSize,
+	ImageResize.configure({ allowBase64: true })
 ];
 
 export function newEditor(params: {

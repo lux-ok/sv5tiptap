@@ -35,7 +35,6 @@
 	import AlignJustify from '@lucide/svelte/icons/align-justify';
 	import AlignLeft from '@lucide/svelte/icons/align-left';
 
-	import Quote from '@lucide/svelte/icons/quote';
 	import List from '@lucide/svelte/icons/list';
 	import ListOrdered from '@lucide/svelte/icons/list-ordered';
 	import ListTree from '@lucide/svelte/icons/list-tree';
@@ -121,9 +120,7 @@
 	<MenuDivider />
 
 	<MenuDropDown {editor} menuItems={listItems} {btnClass} {activeClass}>
-		{#if editor?.isActive('blockquote')}
-			<Quote />
-		{:else if editor?.isActive('bulletList')}
+		{#if editor?.isActive('bulletList')}
 			<List />
 		{:else if editor?.isActive('orderedList')}
 			<ListOrdered />
@@ -151,8 +148,6 @@
 	<MenuDivider />
 
 	<div class="flex-1">{@render children?.()}</div>
-
-	<!-- <MenuDivider /> -->
 
 	<MenuSimple {editor} menuItems={undoItems} {btnClass} {activeClass} />
 </div>
