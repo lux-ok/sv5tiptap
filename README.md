@@ -42,9 +42,8 @@ also you need to install the following packages:
 
 ```svelte
 <script lang="ts">
-	// src/routes/+page.svelte
-	import { htmlContent, jsonContent, jsonToHtml, TiptapEditor } from '@lux-ok/sv5tiptap';
-	import type { EditorType } from '@lux-ok/sv5tiptap';
+	import { htmlContent, jsonContent, jsonToHtml, TiptapEditor } from '$lib/index.js';
+	import type { EditorType } from '$lib/index.js';
 	import { onMount } from 'svelte';
 
 	/**
@@ -54,29 +53,23 @@ also you need to install the following packages:
 	 */
 	let content = undefined;
 	let editor = $state<EditorType>();
-
-	// This is not necessary
-	let html = $state();
-
-	$effect(() => {
-		// This is not necessary
-		// you can use getJSON() or getHTML() to obtain the data of the editor element when needed.
-		editor?.on('update', () => {
-			html = jsonToHtml(editor?.getJSON());
-		});
-	});
+	let html = $state<string>();
 
 	onMount(() => {
-		// This is not necessary
+		// This is not necessary, you can use getJSON() or getHTML() anytime like save json to database
 		html = jsonToHtml(jsonContent);
+		editor?.on('update', () => {
+			console.log('updated');
+			html = jsonToHtml(editor?.getJSON());
+		});
 	});
 </script>
 
 <div class="flex h-svh flex-row gap-4 overflow-hidden p-4">
 	<TiptapEditor bind:editor {content} defaultToolbar={true} class="flex-1 rounded-md" />
 
+	<!-- This is WYSWYG demo, not necessary -->
 	<div class="prose max-w-full flex-1 overflow-auto rounded-md border p-4">
-		<!-- This is not necessary -->
 		{@html html}
 	</div>
 </div>

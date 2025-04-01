@@ -10,27 +10,23 @@
 	 */
 	let content = undefined;
 	let editor = $state<EditorType>();
-	let html = $state();
-
-	$effect(() => {
-		// This is not necessary
-		// you can use getJSON() or getHTML() to obtain the data of the editor element when needed.
-		editor?.on('update', () => {
-			html = jsonToHtml(editor?.getJSON());
-		});
-	});
+	let html = $state<string>();
 
 	onMount(() => {
-		// This is not necessary
+		// This is not necessary, you can use getJSON() or getHTML() anytime like save json to database
 		html = jsonToHtml(jsonContent);
+		editor?.on('update', () => {
+			console.log('updated');
+			html = jsonToHtml(editor?.getJSON());
+		});
 	});
 </script>
 
 <div class="flex h-svh flex-row gap-4 overflow-hidden p-4">
 	<TiptapEditor bind:editor {content} defaultToolbar={true} class="flex-1 rounded-md" />
 
+	<!-- This is WYSWYG demo, not necessary -->
 	<div class="prose max-w-full flex-1 overflow-auto rounded-md border p-4">
-		<!-- This is not necessary -->
 		{@html html}
 	</div>
 </div>

@@ -54,8 +54,9 @@ export function newEditor(params: {
 	extensions?: Extensions;
 	editorClass?: string;
 	onTransaction?: () => void;
+	onUpdate?: () => void;
 }): Editor {
-	const { element, content, extensions, editorClass, onTransaction } = params;
+	const { element, content, extensions, editorClass, onTransaction, onUpdate } = params;
 
 	return new Editor({
 		element,
@@ -67,6 +68,7 @@ export function newEditor(params: {
 			}
 		},
 		onTransaction
+		// onUpdate
 	});
 }
 

@@ -42,10 +42,11 @@
 			extensions,
 			editorClass: cn(editorBaseClass, editorClass),
 			onTransaction: () => {
-				editor = undefined; // ! for toolbar reactive but poor performance, need solve
+				editor = undefined; // ! force toolbar update
 				editor = editorInstance;
 			}
 		});
+		editor = editorInstance;
 	});
 
 	onDestroy(() => {
