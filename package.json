@@ -6,7 +6,7 @@
 		"type": "git",
 		"url": "git+https://github.com/lux-ok/sv5tiptap.git"
 	},
-	"description": "Generic dataset control library for js/ts",
+	"description": "Tiptap Editor for Svelte5",
 	"keywords": [
 		"rich editor for svelte5",
 		"svelte 5",
