@@ -13,7 +13,8 @@
 		"tiptap 2",
 		"tailwind 4",
 		"daisy ui 5",
-		"rich editor"
+		"rich editor",
+		"svelte ui component"
 	],
 	"license": "MIT",
 	"publishConfig": {
