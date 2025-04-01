@@ -4,7 +4,7 @@
 	"author": "Lux",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/lux-ok/sv5tiptap"
+		"url": "git+https://github.com/lux-ok/sv5tiptap.git"
 	},
 	"description": "Generic dataset control library for js/ts",
 	"keywords": [
