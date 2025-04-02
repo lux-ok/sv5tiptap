@@ -23,7 +23,13 @@
 </script>
 
 <div class="flex h-svh flex-row gap-4 overflow-hidden p-4">
-	<TiptapEditor bind:editor {content} defaultToolbar={true} class="flex-1 rounded-md" />
+	<TiptapEditor
+		bind:editor
+		{content}
+		defaultToolbar={true}
+		class="flex-1 rounded-md"
+		editorClass="rounded-b-xs"
+	/>
 
 	<!-- This is WYSWYG demo, not necessary -->
 	<div class="prose max-w-full flex-1 overflow-auto rounded-md border p-4">
