@@ -24,17 +24,17 @@ Welcome any suggestions or contributions.
 ## Installation
 
 ```bash
-npm i @lux-ok/sv5tiptap
+npm install @lux-ok/sv5tiptap
 ```
 
-also you need to install the following packages:
+also your target project need to installed the following packages:
 
 ```json
 "peerDependencies": {
-  "svelte": "^5.0.0",
-  "tailwindcss": "^4.0.0",
-  "@tailwindcss/typography": "^0.5.15",
-  "daisyui": "^5.0.9"
+  "svelte": "^5.0.0", // dev
+  "tailwindcss": "^4.0.0", // dev
+  "@tailwindcss/typography": "^0.5.15", // dev
+  "daisyui": "^5.0.9", // dev
 }
 ```
 
