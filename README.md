@@ -59,6 +59,7 @@ also your target project need to installed the following packages:
 		// This is not necessary, you can use getJSON() or getHTML() anytime like save json to database
 		html = jsonToHtml(jsonContent);
 		editor?.on('update', () => {
+			// callback on editor update
 			console.log('updated');
 			html = jsonToHtml(editor?.getJSON());
 		});

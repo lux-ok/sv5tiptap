@@ -16,6 +16,7 @@
 		// This is not necessary, you can use getJSON() or getHTML() anytime like save json to database
 		html = jsonToHtml(jsonContent);
 		editor?.on('update', () => {
+			// callback on editor update
 			console.log('updated');
 			html = jsonToHtml(editor?.getJSON());
 		});
@@ -31,7 +32,7 @@
 		editorClass="rounded-b-xs"
 	/>
 
-	<!-- This is WYSWYG demo, not necessary -->
+	<!-- For demo, not necessary -->
 	<div class="prose max-w-full flex-1 overflow-auto rounded-md border p-4">
 		{@html html}
 	</div>
