@@ -58,7 +58,10 @@
 	let { class: className, btnClass, activeClass, editor, children }: Props = $props();
 </script>
 
-<div class={cn('flex w-full flex-wrap items-center gap-x-1 gap-y-2 px-4 py-1', className)}>
+<div
+	id="toolbar"
+	class={cn('flex w-full flex-wrap items-center gap-x-1 gap-y-2 px-4 py-1', className)}
+>
 	<MenuDropDown {editor} menuItems={headingItems} {btnClass} {activeClass}>
 		{#if editor?.isActive('heading', { level: 1 })}
 			<Heading1 />

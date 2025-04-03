@@ -145,4 +145,20 @@ also your target project need to installed the following packages:
 		@apply mx-0 my-4;
 	}
 }
+
+#toolbar {
+  .lucide {
+    stroke-width: 1.25;
+    width: 18px;
+    height: 18px;
+  }
+
+  .lucide * {
+    vector-effect: non-scaling-stroke;
+  }
+
+  .btn {
+    @apply text-xs font-medium;
+  }
+}
 ```
