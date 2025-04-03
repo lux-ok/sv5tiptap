@@ -14,7 +14,7 @@
 	};
 	let { editor, class: className, btnClass, menuClass }: Props = $props();
 
-	const btnBaseClass: string = 'btn btn-square btn-ghost btn-sm p-1.5';
+	const btnBaseClass: string = 'btn btn-square btn-ghost btn-sm';
 
 	let open = $state(false);
 	let url = $state<string>();

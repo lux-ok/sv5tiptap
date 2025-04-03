@@ -4,7 +4,7 @@
 	import type { EditorType, MenuItem } from '../../type.js';
 	import { cn } from '../../core/utils.js';
 
-	const btnBaseClass: string = 'btn btn-ghost btn-sm p-1.5';
+	const btnBaseClass: string = 'btn btn-ghost btn-sm';
 	const activeDefaultClass: string = 'btn-outline border-gray-300';
 
 	type Props = {

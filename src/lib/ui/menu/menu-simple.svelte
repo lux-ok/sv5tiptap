@@ -20,7 +20,7 @@
 		children
 	}: Props = $props();
 
-	const btnBaseClass: string = 'btn btn-square btn-ghost btn-sm p-1.5';
+	const btnBaseClass: string = 'btn btn-square btn-ghost btn-sm';
 </script>
 
 <div class={cn('flex gap-1', className)}>

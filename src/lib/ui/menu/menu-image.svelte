@@ -17,7 +17,7 @@
 	let url = $state<string>();
 	let inpElement = $state<HTMLInputElement>();
 
-	const btnBaseClass: string = 'btn btn-square btn-ghost btn-sm p-1.5';
+	const btnBaseClass: string = 'btn btn-square btn-ghost btn-sm';
 
 	function setLink() {
 		if (url) {
